@@ -6,8 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+//@Ignore
 public class IframeExample {
 
 
@@ -18,18 +20,19 @@ public class IframeExample {
         driver = WebDriverFactory.getDriver("chrome");
     }
 
+
     @AfterMethod
     public void afterTest() {
         driver.quit();
     }
 
-    @Test
+    @Test (enabled = false)
     public void test() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/tinymce");
 
-        // we will switch to iframe.
+        // we will switch to iframe (index, id, webElement
         // TODO switch by id/name
-        driver.switchTo().frame("mce_0_ifr");
+        driver.switchTo().frame(0);
 
         WebElement textBox = driver.findElement(By.id("tinymce"));
         textBox.clear();
@@ -59,4 +62,9 @@ public class IframeExample {
         textBox.sendKeys("great.thanks last time");
 
     }
+    /*
+    * driver.switchTo().frame() //index, name, webElement
+    * driver.switchTo().defaultContent()
+    * driver.switchTo().parentFrame()
+    */
 }

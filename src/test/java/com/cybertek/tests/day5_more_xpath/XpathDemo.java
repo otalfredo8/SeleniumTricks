@@ -10,7 +10,7 @@ public class XpathDemo {
     public static void main(String[] args) {
 
         // get chrome
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        WebDriver driver = WebDriverFactory.getDriver("headless_chrome");
 
         // open browser
         driver.get("http://practice.cybertekschool.com/multiple_buttons");

@@ -98,3 +98,20 @@ public class ActionsClassDemo {
     }
 
 }
+/* Actions functions
+.build()
+.click()
+.clickAndHold()
+.contextClick()
+.doubleClick()
+.dragAndDrop(we, x, y)
+.keyDown()
+.keyUp()
+.moveByOffSet(x, y)
+.moveToElement(we)
+.pause()
+.perform())
+.release()
+.sendKeys()
+.tick()
+*/

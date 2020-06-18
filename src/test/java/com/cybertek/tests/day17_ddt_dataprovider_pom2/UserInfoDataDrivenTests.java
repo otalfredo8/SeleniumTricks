@@ -23,6 +23,4 @@ public class UserInfoDataDrivenTests {
                         {"salesmanager4000", "UserUser123", 262},
                 };
     }
-
-
 }

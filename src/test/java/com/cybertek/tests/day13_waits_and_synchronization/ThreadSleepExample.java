@@ -28,6 +28,7 @@ public class ThreadSleepExample {
     public void test1() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/dynamic_loading/4");
 
+        //Script sleeps regardless of appearance of elements (No implicit wait)
         Thread.sleep(7000);
 
         WebElement message = driver.findElement(By.cssSelector("#finish>h4"));

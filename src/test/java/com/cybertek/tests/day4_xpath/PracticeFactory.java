@@ -14,8 +14,11 @@ public class PracticeFactory {
     //    WebDriver driver = new ChromeDriver();
 
 
-        WebDriver driver = WebDriverFactory.getDriver("Chrome");
+        WebDriver driver = WebDriverFactory.getDriver("headless_chrome");
         driver.get("https://google.com");
+        System.out.println("headless chrome is working on the back");
+        System.out.println(driver.getTitle());
+        driver.close();
 
 
 

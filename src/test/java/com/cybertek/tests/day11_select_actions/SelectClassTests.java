@@ -138,5 +138,16 @@ public class SelectClassTests {
 
         Assert.assertEquals(actualValues, expectedValues);
 
-    } // BREAK 2.03
+    }
 }
+
+/*
+.selectByVisibleText() -deselect
+.selectByValue()       -deselect
+.selectByIndex()       -deselect
+.deselectAll()
+.isMultiple()
+.getOptions()
+.getFirstSelectedOption()
+.getAllSelectedOptions()
+*/

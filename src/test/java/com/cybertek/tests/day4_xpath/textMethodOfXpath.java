@@ -13,18 +13,20 @@ public class textMethodOfXpath {
         verify  Context Menu  is on the page
 
         //tagName[text()='exact Text']
+        //tagName[contains(text(),'partial Text')]
          */
 
-        WebDriver driver = WebDriverFactory.getDriver("Chrome");
+        WebDriver driver = WebDriverFactory.getDriver("headless_chrome");
+        driver.get("http://practice.cybertekschool.com/context_menu");
 
         //locate the element Context Menu
 
-        WebElement text = driver.findElement(By.xpath("//h3[text()='Context Menu']"));
+//        WebElement text = driver.findElement(By.xpath("//h3[text()='Context Menu']"));
+        WebElement text = driver.findElement(By.xpath("//h3[contains(text(),'Context ')]"));
 
         //Verify --> expect vs actual
 
         String expectedText = "Context Menu";
-
         String actualText = text.getText();
 
         if(expectedText.equals(actualText)){
@@ -32,11 +34,6 @@ public class textMethodOfXpath {
         }else {
             System.out.println("fail");
         }
-
-
-
-
-
-
+        driver.close();
     }
 }

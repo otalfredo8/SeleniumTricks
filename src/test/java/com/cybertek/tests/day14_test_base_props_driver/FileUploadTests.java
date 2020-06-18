@@ -17,7 +17,7 @@ public class FileUploadTests extends TestBase {
      */
 
     @Test
-    public void fileUploadTest() {
+    public void fileUploadTest() throws InterruptedException{
         String url = ConfigurationReader.getProperty("url");
         driver.get(url);
 
@@ -26,13 +26,13 @@ public class FileUploadTests extends TestBase {
 
         WebElement fileInput = driver.findElement(By.id("file-upload"));
 
-        fileInput.sendKeys("/Users/marufjon/Desktop/my_file.txt");
+        fileInput.sendKeys("C:\\Users\\alfre\\Downloads\\uploadFile.txt");
 
         WebElement submit = driver.findElement(By.id("file-submit"));
-        submit.click();
+        submit.submit();
 
         WebElement uploadedFile = driver.findElement(By.id("uploaded-files"));
-        Assert.assertEquals(uploadedFile.getText(), "my_file.txt");
+        Assert.assertEquals(uploadedFile.getText(), "uploadFile.txt");
 
     }
 }

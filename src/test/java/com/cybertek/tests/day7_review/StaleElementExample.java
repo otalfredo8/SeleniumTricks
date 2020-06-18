@@ -39,7 +39,7 @@ public class StaleElementExample {
         Thread.sleep(4000);
 
         // GET THE TEXT OF THE FIRST RESULT
-        String expectedName = firstResult.getText(); // TRYING TO INTERACT WITH ELEMENT FROM PREVIOUS PAGE
+        String expectedName = firstResult.getText(); // TRYING TO INTERACT WITH ELEMENT FROM PREVIOUS PAGE (StaleElementException)
         Thread.sleep(2000);
 
 

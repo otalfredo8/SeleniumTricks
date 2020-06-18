@@ -10,6 +10,8 @@ public class CreateCalendarEventTests extends VytrackTestBase {
 
     @Test
     public void allDayEventCheckBoxTest(){
+        test = report.createTest("allDayEventCheckBoxTest is created");
+        test.info("TESTING allDayEventCheckBoxTest");
         loginPage.login(ConfigurationReader.getProperty("driver_username"),
                 ConfigurationReader.getProperty("driver_password"));
         driver.get("https://qa3.vytrack.com/calendar/event/create");

@@ -34,7 +34,7 @@ public abstract class VytrackTestBase {
     @BeforeSuite
     public void setUpSuite() {
         report = new ExtentReports();
-        String path = System.getProperty("user.dir") + "/test-output/report.html";
+        String path = System.getProperty("user.dir") + "/test-output/report1.html";
         htmlReporter = new ExtentHtmlReporter(path);
         htmlReporter.config().setReportName("Vytrack Automated Tests");
 

@@ -140,14 +140,18 @@ public class ExplicitWaitExamples {
 
         driver.get("http://practice.cybertekschool.com/dynamic_loading/6");
 
+        //application server slow, network slow
+        // maximum time out 30, and check every 5
         Wait<WebDriver> fluentWait = new FluentWait<>(driver).
-                withTimeout(Duration.ofSeconds(10)).
+                withTimeout(Duration.ofSeconds(30)).
                 pollingEvery(Duration.ofSeconds(5)).
                 ignoring(NoSuchElementException.class).
                 ignoring(ElementClickInterceptedException.class);
 
 
-        WebElement submitBtn = fluentWait.until(driver -> driver.findElement(By.xpath("//button[text()='Submit']")));
+        //wait until a certain condition
+        WebElement submitBtn =
+                fluentWait.until(driver -> driver.findElement(By.xpath("//button[text()='Submit']")));
 
         driver.findElement(By.name("username")).sendKeys("tomsmith");
         driver.findElement(By.name("password")).sendKeys("SuperSecretPassword");
@@ -155,5 +159,20 @@ public class ExplicitWaitExamples {
         submitBtn.click();
 
     }
-
 }
+/*
+WebDriverWait wait = new WebDriverWait (driver, 10);
+.alertIsPresent()
+.attributeContains()
+.attributeToBe()
+.attributeToBeNotEmpty()
+.elementToBeClickable()
+.elementToBeSelected()
+.frameToBeAvailableAndSwitchToIt()
+.invisibilityOf()
+.invisibilityOfAllElements()
+.visibilityOfAllElements()
+.visibilityOf()
+.urlToBe()
+.stalenessOf()
+*/

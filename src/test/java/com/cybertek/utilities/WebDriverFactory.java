@@ -1,9 +1,14 @@
 package com.cybertek.utilities;
 
+import io.github.bonigarcia.wdm.PhantomJsDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
+import java.lang.ref.PhantomReference;
 
 public class WebDriverFactory {
 
@@ -24,6 +29,12 @@ public class WebDriverFactory {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+            case "headless_chrome":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+            case "headless_firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
         }
         return driver;
     }

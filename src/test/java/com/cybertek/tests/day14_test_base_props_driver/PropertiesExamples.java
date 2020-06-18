@@ -16,6 +16,7 @@ public class PropertiesExamples {
         System.out.println(System.getProperty("os.version"));
         System.out.println(System.getProperty("user.home"));
         System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("user.dir"));
 
         // browser url
         // Properties --> class from java that saves key value combinations
@@ -42,10 +43,11 @@ public class PropertiesExamples {
     public void test2(){
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        // get the the from props file
+        // get the url from props file
         String url = ConfigurationReader.getProperty("url");
         driver.get(url);
         driver.close();
+        // get the instanance only once
         String str = Singleton.getInstance().toUpperCase();
         System.out.println(str);
     }
@@ -55,5 +57,12 @@ public class PropertiesExamples {
         String str = Singleton.getInstance();
         System.out.println(str);
     }
+
+    /*
+    Properties functions
+    .setProperty()
+    .load()
+    .getProperty()
+     */
 
 }

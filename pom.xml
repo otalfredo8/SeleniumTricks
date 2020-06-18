@@ -7,7 +7,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cybertek</groupId>
-    <artifactId>fall-2019-selenium-project</artifactId>
+    <artifactId>SeleniumTricks</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -60,6 +61,19 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
+        </dependency>
+
+<!--        Dependencies for SauceLabs -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0-M1</version>
+            <scope>test</scope>
         </dependency>
 
 

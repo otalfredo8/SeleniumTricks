@@ -16,7 +16,7 @@ public class ExcelUtilityDemo {
         ExcelUtil qa3Short = new ExcelUtil(filePath, sheetName);
         System.out.println(qa3Short.getColumnsNames());
 
-        String data [][] = qa3Short.getDataArray();
+//        String data [][] = qa3Short.getDataArray();
         List<Map<String, String>> dataList = qa3Short.getDataList();
         System.out.println(dataList);
     }

@@ -15,7 +15,23 @@ public class FakerPractice {
         String name = fakeData.name().firstName();
         System.out.println(name);
 
-
+        /*
+        Webelement functions list
+        clear()
+        click()
+        findElements()
+        findElements()
+        getAttribute()
+        getLocation()
+        getSize()
+        getTagName()
+        getText()
+        isDisplayed()
+        isEnable()
+        isSelected()
+        sendKeys()
+        submit()
+         */
 
 
     }

@@ -23,6 +23,7 @@ public class RadioButtonsTest {
 
     @AfterMethod
     public void afterTest() {
+
         driver.quit();
     }
 

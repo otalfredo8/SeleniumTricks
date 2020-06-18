@@ -16,7 +16,8 @@ public class VytrachLoginTestWithWait {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverFactory.getDriver("firefox");
+        driver = WebDriverFactory.getDriver("chrome");
+        //BeforeMethod recommended for implicitWait
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
     }

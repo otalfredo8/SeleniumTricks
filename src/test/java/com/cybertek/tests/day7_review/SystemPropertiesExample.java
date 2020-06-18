@@ -9,5 +9,6 @@ public class SystemPropertiesExample {
 
         System.out.println("OS: " + System.getProperty("os.name") + "; Version: " + System.getProperty("os.version"));
 
+        System.out.println(System.getProperty("user.dir"));
     }
 }

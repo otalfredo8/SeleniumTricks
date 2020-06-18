@@ -105,7 +105,7 @@ right
         WebElement profileName = driver.findElement(By.cssSelector("a[href='javascript: void(0);']"));
 
         Thread.sleep(2000);
-        profileName.click();
+        profileName.submit();
 
         Thread.sleep(1000);
         WebElement myConfiguration = driver.findElement(By.cssSelector("ul.dropdown-menu>li>a[href='/config/user/profile']"));

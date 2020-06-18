@@ -4,16 +4,26 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Clock;
+import java.time.ZonedDateTime;
 
 public class AmazonCssExample {
     public static void main(String[] args) {
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+
+        WebDriver driver = WebDriverFactory.getDriver("headless_firefox");
         driver.get("https://amazon.com");
-        WebElement todaysDeals = driver.findElement(By.cssSelector("a[tabindex='47']"));
-        todaysDeals.click();
+        driver.manage().window().maximize();
+
+        WebDriverWait wait = new WebDriverWait(driver, 9);
+        wait.until(ExpectedConditions.elementToBeClickable
+                ((By.xpath("//a[@href='/gp/goldbox?ref_=nav_cs_gb']")))).click();
 
         String expected = "Today's Deals";
-        WebElement topHeader = driver.findElement(By.cssSelector(".nav-a-content"));
+        WebElement topHeader = wait.until(ExpectedConditions.visibilityOfElementLocated
+                (By.cssSelector(".nav-a-content")));
         System.out.println(topHeader.getText());
 
         if (expected.equals(topHeader.getText())) {
