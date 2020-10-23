@@ -26,19 +26,20 @@ public class ExplicitWaitExamples {
 
     @BeforeMethod
     public void setUp() {
-        driver = WebDriverFactory.getDriver("firefox");
+        //TODO Webdriver Exception when "firefox" is not present
+        driver = WebDriverFactory.getDriver("chrome");
         wait = new WebDriverWait(driver, 10);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
     public void test1TitleTest(){
         driver.get("https://google.com");
-
         System.out.println(driver.getTitle());
 
         driver.get("https://store.steampowered.com/");
@@ -80,7 +81,7 @@ public class ExplicitWaitExamples {
         WebElement username = driver.findElement(By.id("username"));
         WebElement password = driver.findElement(By.id("pwd"));
 
-        // give no,t enough time. change the wait time
+        //TODO - CHANGE 2 TO 20 - give no,t enough time. change the wait time
         wait.withTimeout(Duration.ofSeconds(2));
 
         // waits for given element to be visible on page
@@ -156,8 +157,11 @@ public class ExplicitWaitExamples {
         driver.findElement(By.name("username")).sendKeys("tomsmith");
         driver.findElement(By.name("password")).sendKeys("SuperSecretPassword");
 
+        //TODO UNCOMMENT LINE 160 TO see ElementClickInterceptedException
+        //(driver.findElement(By.xpath("//button[text()='Submit']"))).click();
         submitBtn.click();
 
+        //TODO AT THE END UNCOMMENT LINE 32 TO SEE THE DIFFERENCE WITH IMPLICITWAIT
     }
 }
 /*

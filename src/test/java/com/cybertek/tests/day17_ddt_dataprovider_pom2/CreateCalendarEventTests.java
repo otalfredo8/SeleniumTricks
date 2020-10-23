@@ -16,14 +16,14 @@ public class CreateCalendarEventTests extends VytrackTestBase {
                 ConfigurationReader.getProperty("driver_password"));
         driver.get("https://qa3.vytrack.com/calendar/event/create");
         assertFalse(createCalendarEventsPage.allDayEventCheckbox.isSelected());
-
     }
 
     @Test
-    public void repeatCheckBoxTest(){
+    public void repeatCheckBoxTest() throws InterruptedException{
         loginPage.login(ConfigurationReader.getProperty("driver_username"),
                 ConfigurationReader.getProperty("driver_password"));
         driver.get("https://qa3.vytrack.com/calendar/event/create");
+        Thread.sleep(2000);
         assertFalse(createCalendarEventsPage.repeatCheckbox.isSelected());
     }
 }

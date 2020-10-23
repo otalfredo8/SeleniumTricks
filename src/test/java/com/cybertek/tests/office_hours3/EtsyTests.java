@@ -83,8 +83,6 @@ public class EtsyTests extends TestBase {
 
         String expectedUrl = "free_shipping=true";
         Assert.assertTrue(driver.getCurrentUrl().endsWith(expectedUrl));
-
-
     }
 
     public static void waitForPageToLoad(long timeOutInSeconds) {

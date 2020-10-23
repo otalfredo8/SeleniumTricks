@@ -21,6 +21,8 @@ public class ExcelUtil {
     private Workbook workBook;
     private String path;
 
+    //TODO go over Exceptions Hierarchy
+
     public ExcelUtil(String path, String sheetName) {
         this.path = path;
         try {

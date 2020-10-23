@@ -91,8 +91,6 @@ public class ListOfElementsTests {
         System.out.println("First result: " + allResults.get(0).getText());
         System.out.println("Second result: " + allResults.get(1).getText());
         System.out.println("Last result: " + allResults.get(allResults.size() - 1).getText());
-
-
     }
 
     /*

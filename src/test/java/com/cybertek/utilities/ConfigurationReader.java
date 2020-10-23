@@ -19,6 +19,8 @@ public class ConfigurationReader {
         try {
             // reads file in java. we neeed to pass the path of the file
             FileInputStream fileInputStream = new FileInputStream("configuration.properties");
+            //TODO - UNCOMMENT LINE 23 TO SEE FULL PATH
+            //FileInputStream fileInputStream = new FileInputStream("C:\\Users\\alfre\\IdeaProjects\\SeleniumTricks\\configuration.properties");
             // load contents of the file the properties object.
             properties.load(fileInputStream);
             fileInputStream.close();

@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
-
+//TODO TALK ABOUT EXTENTREPORTS
 public class PositiveLoginTests extends TestBase {
 
     LoginPage loginPage;
@@ -55,9 +55,4 @@ public class PositiveLoginTests extends TestBase {
         assertEquals(driver.getTitle(), "Dashboard");
 
     }
-
-
-
-
-
 }

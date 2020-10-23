@@ -35,39 +35,41 @@ public class PopupAndAlertsExamples {
     }
 
     @Test
-    public void jsAlertsAccept() {
+    public void jsAlertsAccept() throws InterruptedException{
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
-
+        Thread.sleep(2000);
         WebElement button1 = driver.findElement(By.xpath("//button[1]"));
         button1.click();
-
+        Thread.sleep(2000);
         Alert alert = driver.switchTo().alert();
         alert.accept();
     }
 
     @Test
-    public void jsAlertsCancel() {
+    public void jsAlertsCancel() throws InterruptedException{
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
-
+        Thread.sleep(2000);
         WebElement button2 = driver.findElement(By.xpath("//button[2]"));
         button2.click();
-
+        Thread.sleep(2000);
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
     }
 
     @Test
-    public void jsAlertsSendkeys() {
+    public void jsAlertsSendkeys() throws InterruptedException{
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
 
         WebElement button3 = driver.findElement(By.xpath("//button[3]"));
-//        button3.click();
+        button3.click();
 
         Alert alert = null;
         try {
             alert = driver.switchTo().alert();
             alert.sendKeys("Admiral Kunkka");
+            
             alert.accept();
+            Thread.sleep(2000);
 
         } catch (NoAlertPresentException e) {
             e.printStackTrace();

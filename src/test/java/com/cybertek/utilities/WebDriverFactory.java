@@ -29,9 +29,11 @@ public class WebDriverFactory {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+                //break;    //TOASK - what is the  fuction of the break statement?
             case "headless_chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                break;
             case "headless_firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));

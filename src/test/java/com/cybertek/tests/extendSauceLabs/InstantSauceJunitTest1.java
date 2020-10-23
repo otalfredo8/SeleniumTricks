@@ -14,6 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//TODO This test requires a SauceLabs Account. Optional: Watch https://youtu.be/SECe1Qia-e8
+//9:37 Get Key from User Settings demo
+//3:10 Set capabilities demo
 public class InstantSauceJunitTest1 {
   private WebDriver driver;
 
@@ -91,5 +94,7 @@ public class InstantSauceJunitTest1 {
     driver.quit();
 
   }
+
+  //TODO Analysis: We can create a RemoteDriver class like our Driver class in utils. Configuration properties should specify the driver.
 
 }

@@ -56,7 +56,8 @@ public class TabsAndWindowsExample {
         System.out.println(driver.getTitle());
         System.out.println(driver.findElement(By.tagName("h3")).getText());
 
-
+        //To switch back windows
+        driver.switchTo().window(currentWindow);
     }
 
     // write a utility that takes a String title,

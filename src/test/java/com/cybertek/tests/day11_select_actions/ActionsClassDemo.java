@@ -17,7 +17,7 @@ public class ActionsClassDemo {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver = WebDriverFactory.getDriver("firefox");
+        driver = WebDriverFactory.getDriver("chrome");
         actions = new Actions(driver);
     }
 
@@ -63,7 +63,7 @@ public class ActionsClassDemo {
     @Test
     public void dragAndDrop() throws InterruptedException {
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
-
+        Thread.sleep(2000);
         WebElement money = driver.findElement(By.id("draggable"));
         WebElement bank = driver.findElement(By.id("droptarget"));
         Thread.sleep(2000);
@@ -88,10 +88,10 @@ public class ActionsClassDemo {
     @Test
     public void dragAndDropAgain() throws InterruptedException {
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
-
+        Thread.sleep(2000);
         WebElement money = driver.findElement(By.id("draggable"));
         WebElement bank = driver.findElement(By.id("droptarget"));
-        Thread.sleep(2000);
+
         actions.moveToElement(money).clickAndHold().moveToElement(bank).release().build().perform();
         Thread.sleep(2000);
 

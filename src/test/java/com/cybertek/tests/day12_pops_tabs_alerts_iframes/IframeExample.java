@@ -26,7 +26,7 @@ public class IframeExample {
         driver.quit();
     }
 
-    @Test (enabled = false)
+    @Test
     public void test() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/tinymce");
 

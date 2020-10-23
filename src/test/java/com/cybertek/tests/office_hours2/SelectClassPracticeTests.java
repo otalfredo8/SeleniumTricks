@@ -52,7 +52,6 @@ public class SelectClassPracticeTests {
         List<String> allOptionsStr = BrowserUtils.getElementsText(allOptionsEl);
 
         Assert.assertEquals(allOptionsStr, expectedOptions);
-
     }
 
     /*
@@ -77,7 +76,6 @@ public class SelectClassPracticeTests {
         categories = new Select(driver.findElement(By.cssSelector("select[tabindex='-1']")));
         categories.selectByVisibleText("Contacts");
 
-        //
         categories = new Select(driver.findElement(By.cssSelector("select[tabindex='-1']")));
         String actual1 = categories.getFirstSelectedOption().getText();
 
@@ -106,7 +104,6 @@ public class SelectClassPracticeTests {
         }
 
         System.out.println(ints);
-
         // verify list of ints is sorted
 
         // create new class with values of the given list
@@ -115,7 +112,6 @@ public class SelectClassPracticeTests {
         Collections.sort(intsCopy);
         // finally compare
         Assert.assertEquals(ints, intsCopy);
-
     }
 
 }

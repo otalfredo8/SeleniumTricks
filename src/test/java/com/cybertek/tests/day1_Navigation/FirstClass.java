@@ -12,7 +12,7 @@ public class FirstClass {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        //get() vs navigate().to(): wait vs doesn't wait
+        //get() vs navigate().to(): wait vs doesn't wait for the page to load
         driver.get("https://www.google.com");
     //    driver.navigate().to("https://www.google.com");
        /*

@@ -56,7 +56,7 @@ permission to perform this action.
 
         Thread.sleep(2000);
         verifyStartsWith("Open Opportunities", driver.getTitle());
-
+        //Thread.sleep(2000); //TODO add this line to avoid (ElementClickInterceptedException)
         shortcutIcon.click();
         allLinks.click();
 

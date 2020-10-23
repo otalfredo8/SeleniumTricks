@@ -13,7 +13,7 @@ public class OrderOfTests {
         System.out.println("capturing title");
         title = "cbt";
         // i will make this test fail.  Assert.fail() --> is a ready method that makes test fail
-        Assert.fail();
+        //Assert.fail();
     }
 
     @Test(priority = 1, dependsOnMethods = "login")

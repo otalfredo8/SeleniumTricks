@@ -18,6 +18,6 @@ public class ExcelUtilityDemo {
 
 //        String data [][] = qa3Short.getDataArray();
         List<Map<String, String>> dataList = qa3Short.getDataList();
-        System.out.println(dataList);
+        System.out.println("\n"+dataList);
     }
 }
