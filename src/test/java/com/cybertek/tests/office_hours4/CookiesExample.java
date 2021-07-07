@@ -24,6 +24,7 @@ public class CookiesExample extends TestBase {
         System.out.println("cookies.size() = " + cookies.size());
         for (Cookie cookie : cookies) {
             System.out.println(cookie.toString());
+            System.out.println("--------------------------");
         }
 
         // delete all cookies
@@ -32,8 +33,12 @@ public class CookiesExample extends TestBase {
         System.out.println(driver.getCurrentUrl());
 
         // PRINT COOKIES AFTER DELETION
-        Set<Cookie> cookies1 = driver.manage().getCookies();
-        System.out.println("cookies1.size() = " + cookies1.size());
+        Set<Cookie> cookies2 = driver.manage().getCookies();
+        System.out.println("cookies2.size() = " + cookies2.size());
+        for (Cookie cookie : cookies2) {
+            System.out.println(cookie.toString());
+            System.out.println("--------------------------");
+        }
 
         // ADD COOKIE
         Driver.closeDriver();
@@ -44,6 +49,12 @@ public class CookiesExample extends TestBase {
             driver.manage().addCookie(cookie);
         }
         driver.navigate().refresh();
+        System.out.println(driver.getCurrentUrl());
+        Set<Cookie> cookies3 = driver.manage().getCookies();
+        for (Cookie cookie : cookies3) {
+            System.out.println(cookie.toString());
+            System.out.println("--------------------------");
+        }
         System.out.println(driver.getCurrentUrl());
     }
 }

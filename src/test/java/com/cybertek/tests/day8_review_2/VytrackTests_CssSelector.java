@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class VytrackTests {
+public class VytrackTests_CssSelector {
 
     public static void main(String[] args) throws InterruptedException {
 //        titleTest();
@@ -72,6 +72,7 @@ permission to perform this action.
         verifyStartsWith("Shortcut Actions List", driver.getTitle());
         driver.quit();
 
+
     }
 
     private static void verifyStartsWith(String expectedTitle, String actualTitle) {
@@ -127,8 +128,17 @@ right
 
 
     /*
-    write a method that takes 2 strings, verifies if string 1 starts with string 2
-
+    Goal			        CSS 3		        XPath
+    All Elements		    *		            //*
+    All P Elements		    p		            //p
+    All Child Elements	    p>*		            //p/*
+    Element By ID		    #foo		        //*[@id=’foo’]
+    Element By Class	    .foo		        //*[contains(@class,’foo’)]
+    Element With Attribute	*[title]	        //*[@title]
+    First Child of All P	p>*:first-child	    //p/*[0]
+    All P with an A child	Not possible	    //p[a]
+    Next Element		    p + *		        //p/following-sibling::*[0]
+    Previous Element	    Not possible	    //p/preceding-sibling::*[0]
      */
 
 }

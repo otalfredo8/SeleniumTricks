@@ -22,7 +22,7 @@ public class textMethodOfXpath {
         //locate the element Context Menu
 
 //        WebElement text = driver.findElement(By.xpath("//h3[text()='Context Menu']"));
-        WebElement text = driver.findElement(By.xpath("//h3[contains(text(),'Context ')]"));
+        WebElement text = driver.findElement(By.xpath("//h3[contains(text(),'Context')]"));
 
         //Verify --> expect vs actual
 

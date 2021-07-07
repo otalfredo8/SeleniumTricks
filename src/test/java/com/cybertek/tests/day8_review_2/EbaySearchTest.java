@@ -58,7 +58,7 @@ public class EbaySearchTest {
         String woodenSpoon = input.getAttribute("value");
         System.out.println(woodenSpoon);
 
-        if (woodenSpoon.equals("wooden spoon")) { //input value wooden spoon
+        if (woodenSpoon.equals("wooden spoon")) { //input value: wooden spoon
             System.out.println("PASS");
         } else {
             System.out.println("FAIL");

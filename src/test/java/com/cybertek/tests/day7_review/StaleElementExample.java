@@ -27,31 +27,28 @@ public class StaleElementExample {
         String searchTerm = "disinfectant wipes";
         WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
         searchBox.sendKeys(searchTerm);
-        searchBox.sendKeys(Keys.ENTER); //TODO add this line to avoid StaleElementExcepition
+        searchBox.sendKeys(Keys.ENTER);
 
-        WebElement searchButton = driver.findElement(By.className("nav-input"));
-        searchButton.click();
-        Thread.sleep(2000);
-
-        // FIND THE FIRST RESULT
+        // FIND THE FIRST RESULT, GET TEXT, AND CLICK
         WebElement firstResult = driver.findElement(By.xpath("//span[@class='a-size-base-plus a-color-base a-text-normal']"));
-        //String expectedName = firstResult.getText(); //TODO add this line to avoid StaleElementExcepition
+        String expectedName = firstResult.getText(); //Add this line to avoid StaleElementException
+        firstResult.click();
 
-        // CLICK ON THE FIRST RESULT
-        firstResult.click(); // PRODUCT PAGE OPENS
-        Thread.sleep(4000);
-
-        // GET THE TEXT OF THE FIRST RESULT
-        String expectedName = firstResult.getText(); //TODO move up this line to avoid (StaleElementException)
-        Thread.sleep(2000);
-
+        //String expectedName = firstResult.getText(); //This line throws StaleElementException
 
         WebElement productName = driver.findElement(By.id("productTitle"));
-        Thread.sleep(2000);
         String actualName = productName.getText();
 
+        //VALIDATE
         Assert.assertEquals(expectedName, actualName);
 
+        if(expectedName.equals(actualName)){
+            System.out.println("PASS");
+        }else{
+            System.out.println("FAIL");
+        }
+
+        driver.quit();
     }
 
 }

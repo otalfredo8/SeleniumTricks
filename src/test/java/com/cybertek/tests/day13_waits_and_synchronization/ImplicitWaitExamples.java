@@ -18,7 +18,7 @@ public class ImplicitWaitExamples {
     @BeforeMethod
     public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
-        //applied to all elements in the script. If element appears, the execution starts (no with Thread)
+        //applied to all elements in the script. If element appears, the execution starts (contrary to Thread.sleep)
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }

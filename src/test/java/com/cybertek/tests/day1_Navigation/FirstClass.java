@@ -3,12 +3,15 @@ package com.cybertek.tests.day1_Navigation;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 
 public class FirstClass {
 
     public static void main(String[] args) throws InterruptedException {
 
+        //Old way to get a driver
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\alfre\\seleniumdrivers\\chromedriver\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 

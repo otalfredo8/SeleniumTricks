@@ -7,12 +7,12 @@ public class OrderOfTests {
 
     String title;
 
-    @Test(priority = 0)
+    @Test(priority =  0)
     public void login() {
         System.out.println("opening the browser");
         System.out.println("capturing title");
         title = "cbt";
-        // i will make this test fail.  Assert.fail() --> is a ready method that makes test fail
+        //Failing impacts dependOnMethods
         //Assert.fail();
     }
 

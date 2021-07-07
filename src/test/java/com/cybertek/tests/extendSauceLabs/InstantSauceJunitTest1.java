@@ -96,5 +96,4 @@ public class InstantSauceJunitTest1 {
   }
 
   //TODO Analysis: We can create a RemoteDriver class like our Driver class in utils. Configuration properties should specify the driver.
-
 }

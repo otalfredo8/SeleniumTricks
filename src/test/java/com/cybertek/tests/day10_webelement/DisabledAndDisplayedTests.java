@@ -84,4 +84,5 @@ public class DisabledAndDisplayedTests {
         Assert.assertTrue(username.isDisplayed());
 
     }
+    //sleep throws InterruptedException
 }

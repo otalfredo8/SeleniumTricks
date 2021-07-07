@@ -29,7 +29,8 @@ public class FileUploadTests extends TestBase {
         fileInput.sendKeys("C:\\Users\\alfre\\Downloads\\uploadFile.txt");
 
         WebElement submit = driver.findElement(By.id("file-submit"));
-        submit.submit();
+        submit.click();
+//        submit.submit();
 
         WebElement uploadedFile = driver.findElement(By.id("uploaded-files"));
         Assert.assertEquals(uploadedFile.getText(), "uploadFile.txt");

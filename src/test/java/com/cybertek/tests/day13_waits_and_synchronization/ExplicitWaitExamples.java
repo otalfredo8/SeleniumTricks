@@ -1,14 +1,12 @@
 package com.cybertek.tests.day13_waits_and_synchronization;
 
 import com.cybertek.utilities.WebDriverFactory;
+import com.github.javafaker.Bool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -124,15 +122,11 @@ public class ExplicitWaitExamples {
         password.sendKeys("UserUser123");
         password.submit();
 
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-
-        WebElement myCalendar = driver.findElement(By.linkText("My Calendar"));
 
         // wait until the element with class loader-mask is not visible
-
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loader-mask")));
-        myCalendar.click();
-
+        wait.until((ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loader-mask.shown")))); // comment out for ElementClickInterceptException
+        // click
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='dashboard-column-1']//descendant::a[text()='My Calendar']"))).click();
     }
 
 
@@ -145,23 +139,20 @@ public class ExplicitWaitExamples {
         // maximum time out 30, and check every 5
         Wait<WebDriver> fluentWait = new FluentWait<>(driver).
                 withTimeout(Duration.ofSeconds(30)).
-                pollingEvery(Duration.ofSeconds(5)).
+                pollingEvery(Duration.ofSeconds(1)).
                 ignoring(NoSuchElementException.class).
                 ignoring(ElementClickInterceptedException.class);
 
 
         //wait until a certain condition
-        WebElement submitBtn =
-                fluentWait.until(driver -> driver.findElement(By.xpath("//button[text()='Submit']")));
-
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loadingoverlay")));
         driver.findElement(By.name("username")).sendKeys("tomsmith");
         driver.findElement(By.name("password")).sendKeys("SuperSecretPassword");
 
-        //TODO UNCOMMENT LINE 160 TO see ElementClickInterceptedException
-        //(driver.findElement(By.xpath("//button[text()='Submit']"))).click();
-        submitBtn.click();
+        fluentWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loadingoverlay")));
+        driver.findElement(By.xpath("//button[text()='Submit']")).click();
 
-        //TODO AT THE END UNCOMMENT LINE 32 TO SEE THE DIFFERENCE WITH IMPLICITWAIT
+
     }
 }
 /*

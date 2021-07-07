@@ -10,7 +10,7 @@ public class XpathDemo {
     public static void main(String[] args) {
 
         // get chrome
-        WebDriver driver = WebDriverFactory.getDriver("headless_chrome");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
 
         // open browser
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
@@ -46,7 +46,7 @@ public class XpathDemo {
         // if none of the works use outerHTML
         System.out.println(buttonSix.getAttribute("outerHTML"));
 
-        //TODO - SEE XPATH HIRARCHY AT https://www.google.com/url?sa=i&url=https%3A%2F%2Flibrarycarpentry.org%2Flc-webscraping%2F02-xpath%2Findex.html&psig=AOvVaw2r_LH6sB4iaqR8OVgwtbym&ust=1601824679535000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCKjrzovcmOwCFQAAAAAdAAAAABAD
+        //SEE XPATH HIRARCHY AT https://librarycarpentry.org/lc-webscraping/02-xpath/index.html
 
     }
 }

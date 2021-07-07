@@ -77,4 +77,14 @@ public class TestNGAssertionsTest {
         Assert.assertTrue(a>b); /// false
     }
 
+    /*
+    assertEquals()
+    assertNotEquals()
+    assertNull()
+    assertNotNull()
+    assertNotSame
+    assertSame()
+    assertTrue()
+    fail()
+    * */
 }

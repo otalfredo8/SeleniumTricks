@@ -19,7 +19,7 @@ public class EbaySearch {
          */
 
     public static void main(String[] args) throws InterruptedException {
-        //locaotors --> ID, name, classname,
+        //locators --> ID, name, classname,
         /*
         If class attribute's value has a space or spaces,
         driver cannot locate the element.
@@ -53,15 +53,6 @@ public class EbaySearch {
             System.out.println("fail");
         }
 
-
-
-
-
-
-
-
-
-
-
+        driver.close();
     }
 }

@@ -40,7 +40,6 @@ public class WebTablesTests extends TestBase {
         System.out.println(headers.size());
         // use BrowserUtils to get the list of headers as text and print
         System.out.println(BrowserUtils.getElementsText(headers));
-
     }
 
     // GET table size

@@ -30,8 +30,8 @@ public class IframeExample {
     public void test() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/tinymce");
 
-        // we will switch to iframe (index, id, webElement
-        // TODO switch by id/name
+        // we will switch to iframe (index, id, webElement)
+        // TODO switch by index/id
         driver.switchTo().frame(0);
 
         WebElement textBox = driver.findElement(By.id("tinymce"));

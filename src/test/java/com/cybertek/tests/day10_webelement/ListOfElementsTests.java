@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.List;
 import java.util.Random;
 
@@ -114,6 +115,11 @@ public class ListOfElementsTests {
         //checking all the sport checkboxes are not checked
         for (int i = 0; i < list.size(); i++) {
             Assert.assertFalse(list.get(i).isSelected());
+            if (list.get(i).isSelected()){
+                System.out.println("Selected");
+            }else{
+                System.out.println("No selected");
+            }
         }
 
         System.out.println("Start randomly selecting radio buttons");
@@ -122,7 +128,7 @@ public class ListOfElementsTests {
 
         for (int q = 0; q < 5; q++) {
 
-            Thread.sleep(5000);
+//            Thread.sleep(5000);
             Random ran = new Random();
             int num = ran.nextInt(4);
             list.get(num).click();
@@ -135,9 +141,6 @@ public class ListOfElementsTests {
                     Assert.assertFalse(list.get(i).isSelected());
                 }
             }
-
         }
     }
-
-
 }

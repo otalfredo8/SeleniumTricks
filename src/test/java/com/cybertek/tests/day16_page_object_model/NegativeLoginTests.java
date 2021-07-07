@@ -25,7 +25,7 @@ public class NegativeLoginTests extends TestBase {
         loginPage.logIn.click();
 
         String actual = loginPage.errorMessage.getText();
-
+//        System.out.println(actual);
         Assert.assertTrue(loginPage.errorMessage.isDisplayed());
         Assert.assertEquals(actual, "Invalid user name or password.");
     }

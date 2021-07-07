@@ -10,7 +10,7 @@ public class SingletonDriver {
     private WebDriver driver;
 
     private SingletonDriver(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\alfre\\Chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\alfre\\seleniumdrivers\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
         System.out.println("An instance of WebDriver has been created");
     }

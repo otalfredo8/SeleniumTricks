@@ -1,13 +1,13 @@
-package com.cybertek.tests.day5_more_xpath;
+package com.cybertek.tests.day3_locators2;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ClassNameExample {
+public class LinkTextId {
     public static void main(String[] args) {
-        WebDriver driver = WebDriverFactory.getDriver("headless_chrome");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/login");
 
         WebElement link = driver.findElement(By.linkText("Home"));

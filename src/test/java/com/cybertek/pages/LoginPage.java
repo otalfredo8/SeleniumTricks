@@ -12,7 +12,6 @@ public class LoginPage {
         // page object classes needs contructor. here we have to call the PageFactory.initElements
         // from selenium and pass a webdriver object and this class as param
         PageFactory.initElements(Driver.getDriver(), this);
-
     }
 
     // FindBy --> we provide the locator for webelement

@@ -20,10 +20,10 @@ public class JavaScriptExecutorTests {
         jse = (JavascriptExecutor) driver;
     }
 
-    @AfterMethod
-    public void afterTest() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void afterTest() {
+//        driver.quit();
+//    }
 
     @Test
     public void scroll() throws InterruptedException {
@@ -44,13 +44,9 @@ public class JavaScriptExecutorTests {
         WebElement input = driver.findElement(By.cssSelector("input[disabled]"));
 
         String text = "hi world";
-
-        jse.executeScript("arguments[0].setAttribute('value', '" + text +"')", input);
-
-        // arguments[0].setAttribute('value', 'HELLO WORLD')
+        jse.executeScript("arguments[0].setAttribute('value', '"+ text +"')", input);
         Thread.sleep(5000);
 
-        //TODO - .getAttribute("value")
         WebElement inputEnabled = driver.findElement(By.xpath("//input[@type='text']"));
         System.out.println(inputEnabled.getAttribute("value"));
     }

@@ -61,8 +61,16 @@ public class PageHeadersTests extends VytrackTestBase {
         test.info("Verifying page header");
         String actual = vehiclesPage.pageHeader.getText();
         //TODO - CHANGE CARROS FOR CARS
-        assertEquals(actual, "Carros");
-        test.pass("PASS: Vehicles page title test");
+
+        if(actual.equals("Carros")){
+            test.pass("PASS: Vehicles page title test");
+            assertEquals(actual, "Carros");
+        }else{
+            test.fail("FAIL: Vehicles page title test");
+            assertEquals(actual, "Carros");
+        }
+//        assertEquals(actual, "Carros");
+//        test.pass("PASS: Vehicles page title test");
 
     }
 

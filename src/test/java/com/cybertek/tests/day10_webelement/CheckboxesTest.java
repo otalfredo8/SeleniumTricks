@@ -46,6 +46,5 @@ public class CheckboxesTest {
 
         Assert.assertTrue(one.isSelected());
         Assert.assertTrue(two.isSelected());
-
     }
 }
